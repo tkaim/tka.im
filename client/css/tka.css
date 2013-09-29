@@ -1,0 +1,122 @@
+/*!
+ * tka.css
+ *
+ * Copyright 2013 tka.im
+ * Licensed under The MIT License
+ * 
+ * @charver @hobbo
+ */
+@import "bootstrap.min.css";
+
+.symbol-contact-status-none {
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-bottom-color: blue;
+	position: relative;
+	top: -5px;
+	display: inline-block;
+    vertical-align:middle;
+}
+.symbol-contact-status-none:after {
+	content: '';
+	position: absolute;
+	left: -5px;
+	top: 5px;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-top-color: blue;
+	display: inline-block;
+    vertical-align:middle;
+}
+
+.symbol-contact-status-online {
+	width: 10px;
+	height: 10px;
+	background: green;
+	display: inline-block;
+    vertical-align:middle;
+}
+
+
+.symbol-contact-status-dnd {
+	width: 10px;
+	height: 10px;
+	background: orange;
+	display: inline-block;
+    vertical-align:middle;
+}
+
+
+.symbol-contact-status-xa {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 10px solid orange;
+	display: inline-block;
+    vertical-align:middle;
+}
+
+
+.symbol-contact-status-away {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 10px solid orange;
+	display: inline-block;
+    vertical-align:middle;
+}
+
+.symbol-contact-status-offline {
+	width: 10px;
+	height: 10px;
+	background: red;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	display: inline-block;
+    vertical-align:middle;
+}
+
+
+.contact-status-online {
+	display: inline-block;
+    vertical-align:middle;
+    position:relative;
+	left:10px;
+}
+
+.contact-status-offline {
+	display: inline-block;
+    vertical-align:middle;
+    position:relative;
+	left:10px;
+}
+
+.contact-status-none {
+	color: gray;
+	display: inline-block;
+    vertical-align:middle;
+    position:relative;
+	left:10px;
+}
+.contact-status-none:hover:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: 'User has not yet accepted your request';
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+}
+
+.contact-status-none-both-chat{
+
+}
