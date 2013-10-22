@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Herro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Loading Bootstrap -->
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="assets/css/flat-ui.css" rel="stylesheet">
+
+    <!-- Loading Additional CSS -->
+    <link href="assets/css/tka.css" rel="stylesheet">
+
+<!--<style>
+  body {padding-top: 50px;}
+</style>
+    --><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="height:100%">
+    <div class="navbar navbar-inverse">
+      <div class="navbar-collapse collapse" id="nav-collapse-01">
+        <ul class="nav" id="menu">
+          <li>
+            <a href="#fakelink">tka.im</a>
+          </li>
+        </ul>
+      </div><!--/.nav -->
+    </div>
+    
+    <div class="login-screen" id="login">
+      <div class="login-form">
+        <div class="form-group">
+          <input type="text" class="form-control login-field" value="" placeholder="Enter your user name" id="username" />
+          <label class="login-field-icon fui-user" for="username"></label>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control login-field" value="" placeholder="Password" id="password" />
+          <label class="login-field-icon fui-lock" for="password"></label>
+        </div>
+        <a class="btn btn-primary btn-lg btn-block" href="javascript:connect()" id="connect">Login</a>
+      </div>
+    </div>
+    
+    <div class="container" id="mainapp">
+    	<div class="row">
+		    <div class="col-md-2" style="padding-left:1px; padding-right:40px">
+			    <div class="row" id="groups"><p class="lead">Groups</p></div>
+          <div class="row"><p class="lead">Private</p></div>
+			    <div class="row" id="roster"></div>
+		    </div>
+		    
+        <div class="col-md-10" id="chatdiv">
+          <div class="row">
+            <div class="col-md-10">
+              <div style="padding-top:5px" id="chatpanelbanner"></div>
+            </div>
+            <div class="col-md-2">
+              <div class="row">
+                <div class="col-md-2"><span class="fui-search" onclick="javascript:VCard.showVCardForCurrentCorrespondent()"/></div>
+                <div class="col-md-2"><span class="fui-cross" /></div>
+              </div>
+            </div>
+          </div>
+          <div style="overflow-y:auto; overflow-x:hidden; height:400px" id="chatpanel" user=""></div>
+          <div>
+             <div class="compose_window" id="composing"></div>
+          </div>
+          <div style="padding-bottom:20px">
+             <input type="text" value="" placeholder="Chat goes here" class="form-control" id="chatentry"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="vcard">
+      <div class="row">
+        <div class="col-md-2" style="padding-left:1px; padding-right:40px">
+          <div class="row" id="groups"><h6>Picture</h6></div>
+        </div>
+        
+        <div class="col-md-6" id="details">
+
+          <div class="row"> 
+            <div class="col-md-12" style="padding:5px">           
+             <input type="text" value="" placeholder="JID" class="form-control" disabled="disabled" id="vJid"/>
+            </div>
+          </div>
+
+          <div class="row"> 
+            <div class="col-md-12" style="padding:5px">           
+             <input type="text" value="" placeholder="Display Name" class="form-control" id="vDisplayName"/>
+            </div>
+          </div>
+
+          <div class="row"> 
+            <div class="col-md-12" style="padding:5px">           
+             <input type="text" value="" placeholder="Nickname" class="form-control" id="vNickName"/>
+            </div>
+          </div>
+
+          <div class="row"> 
+            <div class="col-md-4" style="padding:5px">           
+             <input type="text" value="" placeholder="Given Name" class="form-control" id="vGivenName"/>
+            </div>
+            <div class="col-md-4" style="padding:5px">           
+             <input type="text" value="" placeholder="Middle Name" class="form-control" id="vMiddleName"/>
+            </div>
+            <div class="col-md-4" style="padding:5px">           
+             <input type="text" value="" placeholder="Family Name" class="form-control" id="vFamilyName"/>
+            </div>
+          </div>
+
+          <div class="row"> 
+            <div class="col-md-4" style="padding:5px">           
+             &nbsp;
+            </div>
+            <div id="savevcard" class="col-md-4" style="padding:5px">           
+             <a href="javascript:VCard.save()" class="btn btn-block btn-lg btn-primary">Save</a>
+            </div>
+            <div class="col-md-4" style="padding:5px">           
+            <a id="cancelvcardbutton" href="javascript:VCard.hide()" class="btn btn-block btn-lg btn-primary">Cancel</a>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+    <script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-select.js"></script>
+    <script src="assets/js/bootstrap-switch.js"></script>
+    <script src="assets/js/flatui-checkbox.js"></script>
+    <script src="assets/js/flatui-radio.js"></script>
+    <script src="assets/js/jquery.tagsinput.js"></script>
+    <script src="assets/js/jquery.placeholder.js"></script>
+    <script src='assets/js/strophe.min.js'></script>
+    <script src='assets/js/tka.js'></script>
+    <script src='assets/js/roster.js'></script>
+    <script src='assets/js/vcard.js'></script>
+    <script src='assets/js/status.js'></script>
+    <script src='assets/js/chat.js'></script>
+    <script src='assets/js/mustache.js'></script>
+ <!-- <div class="footer">
+	<p>&copy; tka.im Development 2013 <a href="https://github.com/tkaim/tka.im"/>Github</p>
+  </div>-->
+
+  </body>
+</html>
